@@ -1,6 +1,6 @@
 
 .jumbotron {
-    background-color: rgb(96, 96, 245);
+    background-color: rgb(42, 42, 151);
     padding-bottom: 5px;
     padding-top: 5px;
     color:white;
@@ -11,7 +11,18 @@
     margin-right:auto;
     
 }
-
-.row {
-   background-color: teal;
+body {
+    background-color: rgb(0, 10, 66);
 }
+
+h4 {
+    padding-bottom: 15px; 
+}
+
+#fiveDay {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
