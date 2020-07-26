@@ -3,7 +3,7 @@ var city = "Atlanta";
 var lat = "";
 var lng = "";
 var citiesArray = [];
-
+var now = moment()
 
 $("#search").on("click", function () {
     event.preventDefault();
@@ -22,10 +22,12 @@ function currentWeather() {
     }).then(function (response) {
         console.log("response:", response);
         $("#cityName").text(response.name);
+        $("#date").text(now.format('dddd MMMM Do YYYY'))
         saveCities(response);
         console.log(citiesArray);
         lat = response.coord.lat;
         lng = response.coord.lon;
+        $("#forecast").empty();
         oneCall();
 
     });
@@ -63,7 +65,7 @@ function oneCall() {
             var temp = Math.floor((response.daily[i].temp.day - 273.15) * 1.80 + 32);
             dayCard.append(`
             <div class="card text-white bg-primary mb-3" id="fiveDay"  style="max-width: 13rem;">
-                <div class="card-header">Header</div>
+                <div class="card-header">${now.add(i,"days").format("dddd MMMM Do")}</div>
                 <div class="card-body">
                 <img src=" ${iconURL}">
                 <p class="card-text" id="temp">Temperature: ${temp}</p>
