@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
     <header>
@@ -27,14 +26,10 @@
                     <label for="inputCity" class="sr-only">City</label>
                     <input type="text" class="form-control" id="inputCity" placeholder="City">
                     </div>
-                    <button type="submit" class="btn btn-primary mb-2">Search</button>
+                    <button type="submit" id="search" class="btn btn-primary mb-2">Search</button>
                 </form>
                 <div class="btn-group-vertical">
-                    <a class="btn btn-primary" href="#" role="button">city</a>
-                    <a class="btn btn-primary" href="#" role="button">city</a>
-                    <a class="btn btn-primary" href="#" role="button">city</a>
-                    <a class="btn btn-primary" href="#" role="button">city</a>
-                    <a class="btn btn-primary" href="#" role="button">city</a>
+
                 </div>
                 </div>
             </div>
@@ -42,11 +37,11 @@
         <div class="col-md-9">
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Atlanta (date)</h5>
-                  <p class="card-text">Temperature:</p>
-                  <p class="card-text">Humidity:</p>
-                  <p class="card-text">Wind Speed:</p>
-                  <p class="card-text">UV Index:</p>
+                  <h5 class="card-title" id="cityName">Atlanta (date)</h5>
+                  <p class="card-text" id="temp">Temperature:</p>
+                  <p class="card-text" id="humid">Humidity:</p>
+                  <p class="card-text" id="wind">Wind Speed:</p>
+                  <p class="card-text"id="uvi">UV Index:</p>
                   <h4 class="card-subtitle">5 Day Forecast</h4>
                   <div class="row">
                     <div class="card text-white bg-primary mb-3" id="fiveDay" style="max-width: 13rem;">
@@ -90,8 +85,8 @@
 
         </div>
     </div>
-    <script src="https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&
-    exclude=hourly,minutely&appid=ce83252be18376c8f9fac4b5d38d5a0c"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
