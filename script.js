@@ -4,6 +4,7 @@ var lat = "";
 var lng = "";
 var citiesArray = [];
 
+
 $("#search").on("click", function () {
     event.preventDefault();
     city = $("#inputCity").val();
@@ -39,7 +40,10 @@ function oneCall() {
         method: "GET"
     }).then(function (response) {
         console.log("oneCallResponse:", response);
+        var iconcode = response.current.weather[0].icon;
+        var iconURL = "https://openweathermap.org/img/w/" + iconcode + ".png";
         var temp = Math.floor((response.current.temp - 273.15) * 1.80 + 32);
+        $("#icon").attr("src", iconURL)
         $("#temp").text("Temperature: " + temp);
         $("#humid").text("Humidity: " + response.current.humidity);
         $("#wind").text("Wind Speed: " + response.current.wind_speed);
@@ -54,11 +58,15 @@ function oneCall() {
         });
         for (i = 1; i < 6; i++) {
             var dayCard = $("#forecast")
+            var iconcode = response.daily[i].weather[0].icon;
+            var iconURL = "https://openweathermap.org/img/w/" + iconcode + ".png";
+            var temp = Math.floor((response.daily[i].temp.day - 273.15) * 1.80 + 32);
             dayCard.append(`
             <div class="card text-white bg-primary mb-3" id="fiveDay"  style="max-width: 13rem;">
                 <div class="card-header">Header</div>
                 <div class="card-body">
-                <p class="card-text" id="temp">Temperature: ${response.daily[i].temp.day}</p>
+                <img src=" ${iconURL}">
+                <p class="card-text" id="temp">Temperature: ${temp}</p>
                 <p class="card-text" id="humid">Humidity: ${response.daily[i].humidity}</p>
                 </div>
             </div>

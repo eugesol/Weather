@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,51 +9,55 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Weather Dashboard</h1>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Weather Dashboard</h1>
+            </div>
         </div>
-    </div>
     </header>
     <div class="row">
         <div class="col-md-3">
-            <div class="card" >
+            <div class="card">
                 <div class="card-body">
-                <h5 class="card-title">Find a City!</h5>
-                <form class="form-inline">
-                    <div class="form-group mx-sm-3 mb-2">
-                    <label for="inputCity" class="sr-only">City</label>
-                    <input type="text" class="form-control" id="inputCity" placeholder="City">
-                    </div>
-                    <button type="submit" id="search" class="btn btn-primary mb-2">Search</button>
-                </form>
-                <div class="btnGroup">
+                    <h5 class="card-title">Find a City!</h5>
+                    <form class="form-inline">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="inputCity" class="sr-only">City</label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="City">
+                        </div>
+                        <button type="submit" id="search" class="btn btn-primary mb-2">Search</button>
+                    </form>
+                    <div class="btnGroup">
 
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-9">
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title" id="cityName">Atlanta (date)</h5>
-                  <p class="card-text" id="temp">Temperature:</p>
-                  <p class="card-text" id="humid">Humidity:</p>
-                  <p class="card-text" id="wind">Wind Speed:</p>
-                  <p class="card-text"id="uvi">UV Index:</p>
-                  <h4 class="card-subtitle">5 Day Forecast</h4>
-                  <div class="row" id="forecast">
-                   
-                  </div>  
+                    <h5 class="card-title" id="cityName">Atlanta (date)</h5>
+                    <img src="" id="icon">
+                    <p class="card-text" id="temp">Temperature:</p>
+                    <p class="card-text" id="humid">Humidity:</p>
+                    <p class="card-text" id="wind">Wind Speed:</p>
+                    <p class="card-text" id="uvi">UV Index:</p>
+                    <h4 class="card-subtitle">5 Day Forecast</h4>
+                    <div class="row" id="forecast">
+
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
+    
 </body>
-</html>
 
+</html>
