@@ -39,6 +39,9 @@ function oneCall(){
         console.log("oneCallResponse:", response);
         var temp = Math.floor((response.current.temp - 273.15) * 1.80 + 32);
         $("#temp").text("Temperature: " + temp);
+        $("#humid").text("Humidity: "+ response.current.humidity);
+        $("#wind").text("Wind Speed: "+ response.current.wind_speed);
+        $("#uvi").text("UV Index: "+response.current.uvi);
     });
 }
 
