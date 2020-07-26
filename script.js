@@ -2,13 +2,15 @@ var APIKey = "ce83252be18376c8f9fac4b5d38d5a0c";
 var city = "Atlanta";
 var lat = "";
 var lng = "";
-var citiesArray = ["Atlanta"]
+var citiesArray = [];
 
 $("#search").on("click",function(){
     event.preventDefault();
     city = $("#inputCity").val();
     currentWeather();
 })
+
+
 
 function currentWeather(){
     
@@ -20,11 +22,11 @@ function currentWeather(){
             console.log("response:", response);
             $("#cityName").text(response.name);
             saveCities(response);
-            displayBtns();
             console.log(citiesArray);
             lat = response.coord.lat;
             lng = response.coord.lon;
             oneCall();
+
         });
 
 }
@@ -42,6 +44,14 @@ function oneCall(){
         $("#humid").text("Humidity: "+ response.current.humidity);
         $("#wind").text("Wind Speed: "+ response.current.wind_speed);
         $("#uvi").text("UV Index: "+response.current.uvi);
+        displayBtns();
+            $(".cityBtn").on("click",function(){
+                event.preventDefault();
+                city = $(this).text();
+                currentWeather();
+                console.log($(this).text())
+                console.log("click")
+            })
     });
 }
 
@@ -54,11 +64,15 @@ function saveCities(object){
 }   
 
 function displayBtns(){
-    var btnArea = $(".btn-group-vertical");
+    var btnArea = $(".btnGroup");
     btnArea.empty();
     citiesArray.forEach(element => {
-        var cityBtn = $("<button class='cityBtn btn btn-primary'>")
+        var cityBtn = $("<button class='cityBtn btn btn-primary btn-lg btn-block'>")
         cityBtn.text(element);
         btnArea.append(cityBtn);
+        console.log(element);
+        
     })
+
 }
+
